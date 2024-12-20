@@ -1,0 +1,62 @@
+Login Screen Tests
+
+1. Log into the app with an invalid login
+    App should return an error message.
+    Password is non-visible.
+
+2. Log into the app with a valid login
+    Proceeds to next page with recent tweets
+    Password is non-visible
+
+3. Register a new user
+    Adds the new user to the database, with a unique user id
+    Password is non-visible.
+    Error with invalid email
+
+4. Register a new user with the same name/email/password as another user
+    Adds the new user to the database with the information with a unique user id
+    Password is non-visible.
+
+5. Register a new user with an attempted SQL injection
+    Prevents the SQL injection.
+    Password is non-visible..
+
+6. Logout
+    Exits the program
+
+Functionality Tests
+
+1. Search for tweets
+    - user can enter one key or more keywords
+    - error when user enters no keywords
+    - keyword uses # and returns the tweets with matching hashtag in the hashtag_mentions table
+    - keyword does not use # and matches all tweets with that word (not a hashtag) in the tweets table
+    - check that tweets are in the correct order, correct information
+
+2. Search for users
+    - keyword that is not contained in any user names
+    - keywords that match exactly user names
+    - lower and upper cases
+    - selecting a user to look at (more information)
+    - follow the user
+    - try to follow a user that the user is already following
+    - see more tweets by the user
+
+3. Compose a tweet
+    - cannot be compromised via SQL injection attack
+    - error upon empty tweet input
+    - error when using multiple instances of the same tweet
+        - error even when tweet cases are mismatched eg. #Cool #cOOL #cool #cOOL
+    - add mentioned tag to the appropriate table
+
+4. List followers
+    - see all users following them and select one
+    - see information about a follower
+    - follow a follower and tables are accurately updated
+    - try to select an invalid follower
+
+5. Logout
+    - log out of the system and go back to initial stage
+    - after logging out, log back in using the same/different user account
+    - after logging out, make a new account
+    - after logging out as a new account, relogin to the account
