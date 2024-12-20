@@ -1,0 +1,15 @@
+Changes to make
+- Make sure that email is valid format
+
+- 3. For searching keywords, if I search "he," will the tweet with the text "hello" be returned?
+
+--> No. That's only for user search.
+
+- make hashtag search case-insensitive
+- hashtag case returning search with no hashtag in it
+
+5. If the tweet text is "#cool" and the user searches "cool", should the tweet be shown?
+-->  If the search query is #abcd it should return all tweets containing “#abcd”. I recommend utilizing the hastag_mentions table for this.
+--> If the search query is “abcd” it should return all tweets containing “abcd”. it should also return tweets containing "#abcd"
+
+- Search keywords need to be seperated by comma
